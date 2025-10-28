@@ -19,5 +19,29 @@ if(
     gameBoard[a]==gameBoard[c]
 ){
     setTimeout(()=>alert(`${gameBoard[a]}yutdi`),100)
-}
+    return true
+}return false
  }
+ 
+
+ function handleClick(index, cell) {
+  if (!gameBoard[index]) {
+    gameBoard[index] = currentPlayer;
+    cell.innerHTML =
+      currentPlayer === "X"
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-o"></i>';
+    if (!checkWinner()) {
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+    } else {
+      setTimeout(() => location.reload(), 1000);
+    }
+  }
+}
+
+for (let i = 0; i < 9; i++) {
+  let cell = document.createElement("div");
+  cell.classList.add("cell");
+  cell.addEventListener("click", () => handleClick(i, cell));
+  board.appendChild(cell);
+}
