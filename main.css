@@ -3,6 +3,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fc466b;
+  background: radial-gradient(circle, #eb7e93 94%, rgb(236, 129, 150) 100%);
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 0 0 10px #f7efef;
+}
 #board {
   display: grid;
   border: 2px solid #ffffff;
